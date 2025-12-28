@@ -1,0 +1,11 @@
+numbers=[1,2,3]
+total = 0
+for num in numbers:
+    total+=num
+print("Total Sum of list value",total)
+
+my_dict = {'a': 1, 'b': 2, 'c': 3,'d':4}
+for key , value in my_dict.items():
+    print(f"Key: {key}, Value: {value}")
+squares = []
+
