@@ -1,0 +1,7 @@
+char=(input("Enter a Charecterists::"))
+if char.isalpha():    
+    print(f"'{char}' is an alphabets::")
+elif char.isdigit():
+    print(f" '{char}' is a digit::")
+else:
+    print(f"'{char}' is a specials charecter")

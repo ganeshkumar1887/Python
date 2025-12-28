@@ -1,0 +1,14 @@
+char=(input("Enter a Charecter::"))
+ # check letter is alphabet is or not.....
+if char.isalpha():
+    
+    # it,s check letter is upper
+    if char.isupper():
+        print(f"'{char}' is uppercase letter")
+
+        # it,s check letter is lower
+    elif char.islower():
+        print(f"'{char}' is lowercase letter")
+else:
+     print(f"'{char}' is not alphabet letter")
+

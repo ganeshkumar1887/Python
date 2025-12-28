@@ -1,0 +1,66 @@
+class Expense:
+    def __init__(self, amount, category, date, description):
+        self.amount = amount
+        self.category = category
+        self.date = date
+        self.description = description
+
+class BudgetTracker:
+    def __init__(self, budget):
+        self.budget = budget
+        self.expenses = []
+
+    def add_expense(self, expense):
+        self.expenses.append(expense)
+
+    def remove_expense(self, expense):
+        self.expenses.remove(expense)
+
+    def calculate_total_expenses(self):
+        return sum(expense.amount for expense in self.expenses)
+
+    def calculate_remaining_budget(self):
+        return self.budget - self.calculate_total_expenses()
+
+    def display_summary(self):
+        print("Budget: $", self.budget)
+        print("Total Expenses: $", self.calculate_total_expenses())
+        print("Remaining Budget: $", self.calculate_remaining_budget())
+
+# Example usage
+budget_tracker = BudgetTracker(1000)
+expense1 = Expense(200, "Rent", "2022-01-01", "January rent")
+expense2 = Expense(300, "Utilities", "2022-01-15", "January utilities")
+
+budget_tracker.add_expense(expense1)
+budget_tracker.add_expense(expense2)
+
+budget_tracker.display_summary()
+import csv
+
+def save_expenses(expenses, filename):
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Amount", "Category", "Date", "Description"])
+        for expense in expenses:
+            writer.writerow([expense.amount, expense.category, expense.date, expense.description])
+
+# Example usage
+expenses = [expense1, expense2]
+save_expenses(expenses, "expenses.csv")
+import csv
+
+def load_expenses(filename):
+    expenses = []
+    with open(filename, 'r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            expense = Expense(float(row[0]), row[1], row[2], row[3])
+            expenses.append(expense)
+    return expenses
+
+# Example usage
+expenses = load_expenses("expenses.csv")
+for expense in expenses:
+    print(expense.amount, expense.category, expense.date, expense.description)
