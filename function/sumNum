@@ -1,0 +1,7 @@
+def cal_sum(a,b): #parameter
+    sum=a+b
+    print("Sum of number::",sum)
+    return sum
+cal_sum(4,5) #calling function
+cal_sum(40,50)
+cal_sum(14,15)

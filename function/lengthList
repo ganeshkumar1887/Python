@@ -1,0 +1,15 @@
+heroes=["Amir khan","Amitabh bachchan","Shaktiman","rohit Shetti","Salman khan"]
+cities=["Delhi","Chennai","Mumbai","Gurgaon"]
+
+def print_len(list):
+    print(len(list))
+
+def print_list(list):
+    for item in list:
+        print(item,end=" ")
+print_len(heroes)  #calling
+print_len(cities) 
+print_list(heroes)  #calling
+print_list(cities)  #calling
+
+    

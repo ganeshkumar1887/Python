@@ -1,0 +1,5 @@
+def convertor(USD):
+    inr_ruppee=USD*83
+    print("Total ruppee in India=",inr_ruppee)
+doller=int(input("Enter Doller ::"))
+convertor(doller)

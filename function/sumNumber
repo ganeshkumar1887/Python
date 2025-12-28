@@ -1,0 +1,9 @@
+def NumSum(n):
+    total = 0
+    for i in range(1,n+1):
+        total +=i
+    print(total)
+
+num=int(input("Enter a Number::"))
+result = NumSum(num)
+   
